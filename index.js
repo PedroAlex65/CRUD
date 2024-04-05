@@ -4,6 +4,8 @@ import { db } from "./db.js";
 
 const app = express();
 
+const port = process.env.PORT || 8800;
+
 app.use(express.json());
 app.use(cors());
 
@@ -22,8 +24,8 @@ const addUsers = (_, res) => {
 };
 
 app.use("/", getUsers);
-app.post("/",addUsers)
+app.post("/", addUsers);
 
-app.listen("8800", () => {
+app.listen(port, () => {
   console.log("Rodando na porta");
 });
