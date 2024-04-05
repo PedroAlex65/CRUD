@@ -16,7 +16,13 @@ const getUsers = (_, res) => {
   });
 };
 
+const addUsers = (_, res) => {
+  const add =
+    "INSERT INTO `crud`.`usuarios` ( `nome`, `email`, `fone`, `data_nascimento`) VALUES (?);";
+};
+
 app.use("/", getUsers);
+app.post("/",addUsers)
 
 app.listen("8800", () => {
   console.log("Rodando na porta");
